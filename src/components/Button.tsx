@@ -10,7 +10,10 @@ type ButtonProps = {
     hoverBackgroundColor: string;
     hoverFontColor?: string;
     borderColor?: string;
-} & React.ComponentPropsWithoutRef<typeof MUIButton>;
+    borderRadius?: string;
+    fontSize?: string;
+    textTransform?: boolean;
+} & MUIButtonProps;
 
 const Button = ({
                     coloredFull = false,
@@ -23,6 +26,9 @@ const Button = ({
         backgroundColor: backgroundColor,
         color: fontColor,
         borderColor: props.borderColor,
+        borderRadius: props.borderRadius,
+        fontSize: props.fontSize,
+        textTransform: props.textTransform ? "uppercase" : "none",
         '&:hover': {
             backgroundColor: hoverBackgroundColor,
             color: props.hoverFontColor,

@@ -1,8 +1,6 @@
 import React from 'react';
 import Link from "next/link";
-import styles from "../styles/Header.module.css";
 import {NextRouter, useRouter} from "next/router";
-import {joinMultipleStrings} from "@/utils/StringUtils";
 
 type HeaderProps = {
     contactId: string
@@ -15,13 +13,13 @@ const Header = (props: HeaderProps) => {
     }
 
     return (
-        <div className={styles.header}>
-            <div className={styles.logo}></div>
-            <nav className={styles.nav}>
+        <div className="flex justify-between ">
+            <div className="h-[50px] w-[200px] border border-black"></div>
+            <nav className="flex justify-around items-center w-[300px] text-[22px]">
                 <Link
-                    className={joinMultipleStrings(styles.link, isSelectedRoute("/") ? styles.selected_route : styles.not_selected_route)}
+                    className={"text-main " + (isSelectedRoute("/") ? "border-b-2 border-b-main" : "border-none")}
                     href="/">Home</Link>
-                <Link className={styles.link} href={"#" + props.contactId}>Contact</Link>
+                <Link className="text-main" href={"#" + props.contactId}>Contact</Link>
             </nav>
         </div>
     );

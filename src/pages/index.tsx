@@ -1,10 +1,10 @@
 import React from 'react';
-import Header from "@/components/Header";
+import SubTitle from "@/components/SubTitle";
 
 const Home = () => {
     return (
         <div>
-            <Header contactId="CONTACTID"/>
+            <SubTitle subtitle={"Test"} width="30px"/>
         </div>
     );
 };
