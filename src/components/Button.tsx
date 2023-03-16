@@ -7,7 +7,7 @@ type ButtonProps = {
     coloredFull: boolean;
     backgroundColor: string;
     fontColor: string;
-    hoverBackgroundColor: string;
+    hoverBackgroundColor?: string;
     hoverFontColor?: string;
     borderColor?: string;
     borderRadius?: string;
@@ -23,7 +23,6 @@ const Button = ({
                     ...props
                 }: ButtonProps) => {
     const CustomButton = styled(MUIButton)<MUIButtonProps>(() => ({
-        backgroundColor: backgroundColor,
         color: fontColor,
         borderColor: props.borderColor,
         borderRadius: props.borderRadius,
@@ -36,7 +35,8 @@ const Button = ({
     }));
 
     return (
-        <CustomButton variant={coloredFull ? "contained" : "text"}>{props.children}</CustomButton>
+        <CustomButton style={{backgroundColor: backgroundColor}}
+                      variant={coloredFull ? "contained" : "text"}>{props.children}</CustomButton>
     );
 };
 
