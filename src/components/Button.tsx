@@ -1,10 +1,9 @@
 import React from 'react';
 import {styled} from '@mui/material/styles';
 import MUIButton, {ButtonProps as MUIButtonProps} from "@mui/material/Button";
-import {colors} from "@/utils/ColorsUtils";
 
 type ButtonProps = {
-    coloredFull: boolean;
+    coloredFull?: boolean;
     backgroundColor: string;
     fontColor: string;
     hoverBackgroundColor?: string;
@@ -12,31 +11,38 @@ type ButtonProps = {
     borderColor?: string;
     borderRadius?: string;
     fontSize?: string;
-    textTransform?: boolean;
 } & MUIButtonProps;
 
-const Button = ({
-                    coloredFull = false,
-                    backgroundColor = colors.main,
-                    fontColor = colors.dark,
-                    hoverBackgroundColor = colors.white,
+const Button = ({coloredFull = true,
+                    backgroundColor,
+                    fontColor,
+                    borderColor,
+                    borderRadius,
+                    fontSize,
+                    hoverFontColor,
+                    hoverBackgroundColor,
                     ...props
                 }: ButtonProps) => {
     const CustomButton = styled(MUIButton)<MUIButtonProps>(() => ({
+        backgroundColor: backgroundColor,
         color: fontColor,
-        borderColor: props.borderColor,
-        borderRadius: props.borderRadius,
-        fontSize: props.fontSize,
-        textTransform: props.textTransform ? "uppercase" : "none",
+        borderColor: borderColor,
+        borderRadius: borderRadius,
+        fontSize: fontSize,
+        textTransform: "none",
         '&:hover': {
             backgroundColor: hoverBackgroundColor,
-            color: props.hoverFontColor,
+            color: hoverFontColor,
         }
     }));
 
+    const color = backgroundColor;
+
     return (
-        <CustomButton style={{backgroundColor: backgroundColor}}
-                      variant={coloredFull ? "contained" : "text"}>{props.children}</CustomButton>
+        <CustomButton
+            {...props}
+            className={"bg-[" + color + "]"}
+            variant={coloredFull ? "contained" : "text"}>{props.children}</CustomButton>
     );
 };
 
