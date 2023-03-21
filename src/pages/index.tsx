@@ -3,8 +3,8 @@ import Form from "@/components/Form";
 
 const Home = () => {
     return (
-        <div>
-            <Form/>
+        <div className="w-96 mt-5 ml-5">
+            <Form size="small"/>
         </div>
     );
 };

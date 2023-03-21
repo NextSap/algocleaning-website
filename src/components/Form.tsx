@@ -1,25 +1,13 @@
-import React, {FormEvent, useState} from 'react';
+import React, {ChangeEvent, FormEvent, useState} from 'react';
 import {FormControl, InputLabel, MenuItem, Select, SelectChangeEvent, TextField} from "@mui/material";
 import Button from "@/components/Button";
 import {colors} from "@/utils/ColorsUtils";
 
-const availableAreas = [
-    {
-        name: "< 50 m²",
-        value: 50
-    },
-    {
-        name: "50 - 100 m²",
-        value: 100
-    },
-    {
-        name: "> 100 m²",
-        value: 150
-    }
-]
+const availableAreas: string[] = ["< 50 m²", "50 - 100 m²", "> 100 m²"];
+const availableDomains: string[] = ["Façades", "Terrasses", "Toitures"];
 
 type FormProps = {
-    type?: "global" | "toitures" | "façades" | "terrasses",
+    size: "small" | "medium" | undefined,
     selectColor?: string,
     color?: string,
 }
@@ -30,7 +18,14 @@ type FormState = {
     phone: string,
     address: string,
     area: string,
+    domain: string,
+    message: string,
+}
 
+type ErrorState = {
+    name: boolean,
+    email: boolean,
+    phone: boolean,
 }
 
 const Form = (props: FormProps) => {
@@ -39,14 +34,18 @@ const Form = (props: FormProps) => {
         email: "",
         phone: "",
         address: "",
-        area: ""
+        area: "",
+        domain: "",
+        message: "",
     });
 
-    const [name, setName] = useState<string>("");
-    const [email, setEmail] = useState<string>("");
-    const [phone, setPhone] = useState<string>("");
+    const [errors, setErrors] = useState<ErrorState>({
+        name: false,
+        email: false,
+        phone: false,
+    });
 
-    const handleChange = (event: SelectChangeEvent) => {
+    const handleChange = (event: FormChangeEvent) => {
         setForm({
             ...form,
             [event.target.name]: event.target.value,
@@ -55,84 +54,99 @@ const Form = (props: FormProps) => {
 
     const handleSubmit = (event: FormEvent) => {
         event.preventDefault();
-        console.log("Form submitted");
-        if (formValidated()) {
-            console.log("Form validated");
-        }
-        console.log("Form not validated");
+        setErrors({
+            name: isVoid(form.name),
+            email: isVoid(form.email),
+            phone: isVoid(form.phone),
+        });
+
+        if(isVoid(form.name) || isVoid(form.email) || isVoid(form.phone)) return;
+
+        // TODO: Implement API call to send email
     }
 
-
-
-    const formValidated = (): boolean => {
-        let valid = true;
-        if (isVoid(form.name)) {
-            setError("name", "Veuillez renseigner votre nom");
-            valid = false;
-        }
-
-        if (isVoid(form.phone) || (isVoid(form.address) || !form.email.match(/^([\w.%+-]+)@([\w-]+\.)+([\w]{2,})$/i))) {
-            if (isVoid(form.phone)) {
-                setError("phone", "Veuillez renseigner votre numéro de téléphone");
-            }
-
-            if (isVoid(form.address) || !form.email.match(/^([\w.%+-]+)@([\w-]+\.)+([\w]{2,})$/i)) {
-                setError("address", "Veuillez renseigner une adresse correcte");
-            }
-
-            valid = false;
-        }
-        return valid;
-    }
     const isVoid = (value: string): boolean => {
         return value === "";
     }
 
-    const setError = (id: string, error: string): void => {
-        const input = document.getElementById(id);
-        if (input) {
-            input.setAttribute("error", "true");
-            input.setAttribute("helperText", error);
-            console.log(input);
-        }
-    }
+    type FormChangeEvent = ChangeEvent<HTMLInputElement | HTMLTextAreaElement> | SelectChangeEvent;
 
     return (
-        <form onSubmit={handleSubmit}>
-            <TextField
-                error={!isVoid(form.name)}
-                onChange={setName("")}
-                id="name"
-                label="Nom"/>
-            <TextField
-                error
-                id="email-address"
-                label="Adresse email"/>
-            <TextField
-                error
-                id="phone"
-                label="Téléphone"/>
-            <FormControl>
-                <InputLabel id="area">Superficie</InputLabel>
-                <Select
-                    error
-                    labelId="area"
-                    id="area-select"
-                    value={form.area}
+        <form className="flex flex-col justify-around w-full space-y-5" onSubmit={handleSubmit}>
+            <div className="flex justify-between">
+                <TextField
+                    error={errors.name}
+                    helperText={errors.name && "Ce champ est obligatoire"}
+                    value={form.name}
                     onChange={handleChange}
-                    name="area"
-                    sx={{width: "130px"}}>
-                    {availableAreas.map((area, index) => (
-                        <MenuItem key={index} value={area.value}>{area.name}</MenuItem>
-                    ))}
-                </Select>
-            </FormControl>
+                    name="name"
+                    label="Nom"
+                    size={props.size}
+                    sx={{width: "45%"}}/>
+                <TextField
+                    error={errors.phone}
+                    helperText={errors.phone && "Entrez un numéro de téléphone correct"}
+                    value={form.phone}
+                    onChange={handleChange}
+                    name="phone"
+                    label="Téléphone"
+                    size={props.size}
+                    sx={{width: "45%"}}/>
+            </div>
+            <TextField
+                error={errors.email}
+                helperText={errors.email && "Entrez un email correct"}
+                value={form.email}
+                onChange={handleChange}
+                name="email"
+                type="email"
+                label="Adresse email"
+                size={props.size}/>
+            <div className="flex justify-between w-full">
+                <FormControl size={props.size} sx={{width: "45%"}}>
+                    <InputLabel id="area">Superficie</InputLabel>
+                    <Select
+                        labelId="area"
+                        value={form.area}
+                        onChange={handleChange}
+                        name="area"
+                        label="Superficie">
+                        {availableAreas.map((area, index) => (
+                            <MenuItem key={index} value={area}>{area}</MenuItem>
+                        ))}
+                    </Select>
+                </FormControl>
+                <FormControl size={props.size} sx={{width: "45%"}}>
+                    <InputLabel id="domain">Domaine</InputLabel>
+                    <Select
+                        labelId="domain"
+                        value={form.domain}
+                        onChange={handleChange}
+                        name="domain"
+                        label="domaine">
+                        {availableDomains.map((domain, index) => (
+                            <MenuItem key={index} value={domain}>{domain}</MenuItem>
+                        ))}
+                    </Select>
+                </FormControl>
+            </div>
             <TextField
                 id="message"
-                label="Message"/>
+                value={form.message}
+                onChange={handleChange}
+                name="message"
+                label="Message"
+                size={props.size}
+                inputProps={{style: {height: "150px"}}}
+            multiline/>
+
             <Button type="submit"
-                    backgroundColor={"#fff"}
-                    fontColor={"#000"}>Envoyer</Button>
+                    backgroundColor={colors.main}
+                    hoverBackgroundColor={colors.lightGrey}
+                    fontColor={colors.white}
+                    size={props.size}>
+                Envoyer
+            </Button>
         </form>
     );
 };

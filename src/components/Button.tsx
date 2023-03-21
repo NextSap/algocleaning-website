@@ -24,7 +24,6 @@ const Button = ({coloredFull = true,
                     ...props
                 }: ButtonProps) => {
     const CustomButton = styled(MUIButton)<MUIButtonProps>(() => ({
-        backgroundColor: backgroundColor,
         color: fontColor,
         borderColor: borderColor,
         borderRadius: borderRadius,
@@ -36,7 +35,7 @@ const Button = ({coloredFull = true,
         }
     }));
 
-    const color = backgroundColor;
+    const color:string = backgroundColor;
 
     return (
         <CustomButton
