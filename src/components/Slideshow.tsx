@@ -30,7 +30,7 @@ const Slideshow = ({canSwipe = false, arrows = false, ...props}: SlideshowProps)
                    arrows={arrows} pauseOnHover={false}>
                 {props.images.map((slideImage, index) => (
                     <div key={index}>
-                        <div className="flex justify-center items-center bg-cover"
+                        <div className="flex justify-center items-center bg-cover bg-center"
                              style={{height: props.height, 'backgroundImage': `url(${slideImage})`}}>
                         </div>
                     </div>

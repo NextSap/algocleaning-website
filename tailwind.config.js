@@ -13,6 +13,9 @@ module.exports = {
             grey: "#4C594A",
             lightGrey: "#758C73",
             white: "#F7F8F7",
+          },
+          animation: {
+            collapse: "max-height 0.3s ease-in-out",
           }
         },
     },

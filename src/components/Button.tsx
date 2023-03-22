@@ -1,6 +1,30 @@
-import React from 'react';
-import {styled} from '@mui/material/styles';
-import MUIButton, {ButtonProps as MUIButtonProps} from "@mui/material/Button";
+import React, {useState} from 'react';
+import {createTheme, styled, ThemeProvider} from '@mui/material/styles';
+import {ButtonProps as MUIButtonProps} from "@mui/material/Button";
+import Button from "@mui/material/Button";
+import {colors} from "@/utils/ColorsUtils";
+
+import {Montserrat} from "next/dist/compiled/@next/font/dist/google";
+
+const theme = createTheme({
+    typography: {
+        fontFamily: 'Montserrat, sans-serif',
+    },
+    components: {
+        MuiCssBaseline: {
+            styleOverrides: `
+        @font-face {
+          font-family: 'Montserrat';
+          font-style: normal;
+          font-display: swap;
+          font-weight: 400;
+          src: url(${Montserrat});
+          unicodeRange: U+0000-00FF, U+0131, U+0152-0153, U+02BB-02BC, U+02C6, U+02DA, U+02DC, U+2000-206F, U+2074, U+20AC, U+2122, U+2191, U+2193, U+2212, U+2215, U+FEFF;
+        }
+      `,
+        },
+    },
+});
 
 type ButtonProps = {
     coloredFull?: boolean;
@@ -13,17 +37,21 @@ type ButtonProps = {
     fontSize?: string;
 } & MUIButtonProps;
 
-const Button = ({coloredFull = true,
+const ButtonComponent = ({coloredFull = true,
                     backgroundColor,
                     fontColor,
                     borderColor,
                     borderRadius,
                     fontSize,
                     hoverFontColor,
-                    hoverBackgroundColor,
+                    hoverBackgroundColor = colors.white,
                     ...props
                 }: ButtonProps) => {
-    const CustomButton = styled(MUIButton)<MUIButtonProps>(() => ({
+
+    const [hover, setHover] = useState(false);
+
+    const CustomButton = styled(Button)(() => ({
+        backgroundColor: backgroundColor,
         color: fontColor,
         borderColor: borderColor,
         borderRadius: borderRadius,
@@ -35,14 +63,21 @@ const Button = ({coloredFull = true,
         }
     }));
 
-    const color:string = backgroundColor;
-
     return (
-        <CustomButton
-            {...props}
-            className={"bg-[" + color + "]"}
-            variant={coloredFull ? "contained" : "text"}>{props.children}</CustomButton>
+        <ThemeProvider theme={theme}>
+            <CustomButton
+                {...props}
+                style={{
+                    backgroundColor: hover ? hoverBackgroundColor : backgroundColor,
+                }}
+                onMouseEnter={() => setHover(true)}
+                onMouseLeave={() => setHover(false)}
+                variant={coloredFull ? "contained" : "text"}>
+                {props.children}
+            </CustomButton>
+        </ThemeProvider>
+
     );
 };
 
-export default Button;
+export default ButtonComponent;

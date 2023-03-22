@@ -5,12 +5,15 @@ type ImageCardProps = {
     image: string;
     height: string;
     width: string;
+    borderRadius?: string;
 }
 
 const ImageCard = (props: ImageCardProps) => {
     return (
-        <div style={{height: props.height, width: props.width}} className="flex justify-center items-center border border-black">
-            <h1 className="text-[40px] font-semibold text-white">{props.children}</h1>
+        <div style={{height: props.height, width: props.width, backgroundImage: "url('" + props.image + "')",
+            borderRadius: props.borderRadius}}
+             className="flex justify-center items-center bg-center bg-cover">
+            <h2 className="text-[30px] font-medium text-white tracking-wide">{props.children}</h2>
         </div>
     );
 };

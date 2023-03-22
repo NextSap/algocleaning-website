@@ -10,6 +10,7 @@ type FormProps = {
     size: "small" | "medium" | undefined,
     selectColor?: string,
     color?: string,
+    domain?: "Façades" | "Terrasses" | "Toitures",
 }
 
 type FormState = {
@@ -35,7 +36,7 @@ const Form = (props: FormProps) => {
         phone: "",
         address: "",
         area: "",
-        domain: "",
+        domain: props.domain ? props.domain : "",
         message: "",
     });
 
@@ -63,6 +64,20 @@ const Form = (props: FormProps) => {
         if(isVoid(form.name) || isVoid(form.email) || isVoid(form.phone)) return;
 
         // TODO: Implement API call to send email
+
+        setFormVoid();
+    }
+
+    const setFormVoid = (): void => {
+        setForm({
+            name: "",
+            email: "",
+            phone: "",
+            address: "",
+            area: "",
+            domain: "",
+            message: "",
+        });
     }
 
     const isVoid = (value: string): boolean => {
@@ -138,7 +153,7 @@ const Form = (props: FormProps) => {
                 label="Message"
                 size={props.size}
                 inputProps={{style: {height: "150px"}}}
-            multiline/>
+                multiline/>
 
             <Button type="submit"
                     backgroundColor={colors.main}
