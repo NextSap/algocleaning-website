@@ -2,13 +2,9 @@ import React from 'react';
 import Link from "next/link";
 import {NextRouter, useRouter} from "next/router";
 
-const logo = "https://nextsap.s-ul.eu/aH3D7rXq";
+const logo = "https://nextsap.s-ul.eu/8s9tyAKx";
 
-type HeaderProps = {
-    contactId: string
-}
-
-const Header = (props: HeaderProps) => {
+const Header = () => {
     const route: NextRouter = useRouter();
     const isSelectedRoute = (path: string): boolean => {
         return route.pathname === path;
@@ -17,11 +13,11 @@ const Header = (props: HeaderProps) => {
     return (
         <div className="flex justify-between w-full h-20">
             <img src={logo} alt="Logo" className="object-cover ml-5" />
-            <nav className="flex justify-around items-center w-[300px] text-[22px]">
+            <nav className="flex justify-around items-center w-[300px] text-[22px] text-dark">
                 <Link
-                    className={"text-main " + (isSelectedRoute("/") ? "border-b-2 border-b-main" : "border-none")}
+                    className={(isSelectedRoute("/") ? "border-b-2 border-b-dark" : "border-none")}
                     href="/">Home</Link>
-                <Link className="text-main" href={"#" + props.contactId} scroll={false}>Contact</Link>
+                <Link href="#contact" scroll={false}>Contact</Link>
             </nav>
         </div>
     );

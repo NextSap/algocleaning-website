@@ -158,8 +158,7 @@ const Form = (props: FormProps) => {
             <Button type="submit"
                     backgroundColor={colors.main}
                     hoverBackgroundColor={colors.lightGrey}
-                    fontColor={colors.white}
-                    size={props.size}>
+                    fontColor={colors.white}>
                 Envoyer
             </Button>
         </form>
