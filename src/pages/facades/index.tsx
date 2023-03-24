@@ -14,7 +14,7 @@ const Façades = () => {
     return (
         <div className="flex flex-col items-center w-full">
             <Header/>
-            <ImageCard borderRadius={"10px"} image={image} height={"200px"} width={"80%"}>Façades</ImageCard>
+            <ImageCard className="mt-5" borderRadius={"10px"} image={image} height={"200px"} width={"80%"}>Façades</ImageCard>
             <ContactUsButton/>
             <div className="flex flex-col gap-10 w-[80%] mt-20">
                 {Data.data.façades.map((item: DataType, index: number) => (

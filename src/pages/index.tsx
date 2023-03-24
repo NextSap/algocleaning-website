@@ -27,7 +27,7 @@ const Home = () => {
             <Header/>
             <Slideshow images={images} height={"600px"}>
                 <div className="flex flex-col justify-center items-center h-full w-full space-y-10">
-                    <h1 className="text-white text-4xl font-medium tracking-wide text-center">Entretien professionnel de
+                    <h1 className="text-white text-[40px] font-bold tracking-wide text-center">Entretien professionnel de
                         façades</h1>
                     <Button backgroundColor={colors.white}
                             fontColor={colors.dark}
@@ -40,7 +40,11 @@ const Home = () => {
             </Slideshow>
             <div className="flex flex-col items-center mt-14">
                 <div className="w-[80%]">
-                    <DescriptionCard description="Lorem ipsum dolor sit amet, consectetur adipisicing elit. A cupiditate, distinctio ducimus exercitationem itaque necessitatibus perspiciatis totam vero? Assumenda consectetur in modi sed similique voluptates." image={images[0]} imagePosition="left">Pourquoi AlgoFacade ?</DescriptionCard>
+                    <DescriptionCard description="Lorem ipsum dolor sit amet, consectetur adipisicing elit. A cupiditate, distinctio ducimus exercitationem itaque necessitatibus perspiciatis totam vero? Assumenda consectetur in modi sed similique voluptates."
+                                     image={images[0]}
+                                     imagePosition="left">
+                        Pourquoi AlgoFacade ?
+                    </DescriptionCard>
                 </div>
             </div>
             <div className="flex flex-col items-center">
@@ -51,7 +55,7 @@ const Home = () => {
                     Façades
                 </ImageCard>
                 <div className="flex flex-col justify-around items-center w-[80%] mt-8 mb-16 md:flex-row">
-                    <p className="w-full text-xl text-dark mb-5 md:w-[50%] md:mb-0">
+                    <p className="w-full text-xl text-dark mb-5 md:w-[45%] md:mb-0">
                         Lorem ipsum dolor sit amet, consectetur adipisicing elit. A aspernatur culpa ducimus harum
                         impedit, odit officia, placeat porro quae quasi reprehenderit sapiente sint sunt unde.
                     </p>

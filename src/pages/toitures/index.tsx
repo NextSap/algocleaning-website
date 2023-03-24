@@ -15,7 +15,7 @@ const Toitures = () => {
     return (
         <div className="flex flex-col items-center w-full">
             <Header/>
-            <ImageCard borderRadius={"10px"} image={image} height={"200px"} width={"80%"}>Toitures</ImageCard>
+            <ImageCard className="mt-5"  borderRadius={"10px"} image={image} height={"200px"} width={"80%"}>Toitures</ImageCard>
             <ContactUsButton/>
             <div className="flex flex-col gap-10 w-[80%] mt-20">
                 {Data.data.toitures.map((item:DataType, index:number) => (

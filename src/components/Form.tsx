@@ -1,7 +1,9 @@
-import React, {ChangeEvent, FormEvent, useState} from 'react';
+import React, {ChangeEvent, FormEvent, useEffect, useState} from 'react';
 import {FormControl, InputLabel, MenuItem, Select, SelectChangeEvent, TextField} from "@mui/material";
 import Button from "@/components/Button";
 import {colors} from "@/utils/ColorsUtils";
+import {FormStateType} from "@/utils/type";
+import {func} from "prop-types";
 
 const availableAreas: string[] = ["< 50 m²", "50 - 100 m²", "> 100 m²"];
 const availableDomains: string[] = ["Façades", "Terrasses", "Toitures"];
@@ -13,24 +15,17 @@ type FormProps = {
     domain?: "Façades" | "Terrasses" | "Toitures",
 }
 
-type FormState = {
-    name: string,
-    email: string,
-    phone: string,
-    address: string,
-    area: string,
-    domain: string,
-    message: string,
-}
-
 type ErrorState = {
     name: boolean,
     email: boolean,
     phone: boolean,
+    alreadySent: boolean,
+    apiError: boolean,
+    apiErrorMessage: "Une erreur est survenue, veuillez réessayer plus tard" | "Votre demande a bien été envoyée" | undefined,
 }
 
 const Form = (props: FormProps) => {
-    const [form, setForm] = useState<FormState>({
+    const [form, setForm] = useState<FormStateType>({
         name: "",
         email: "",
         phone: "",
@@ -44,6 +39,9 @@ const Form = (props: FormProps) => {
         name: false,
         email: false,
         phone: false,
+        alreadySent: false,
+        apiError: false,
+        apiErrorMessage: undefined
     });
 
     const handleChange = (event: FormChangeEvent) => {
@@ -59,13 +57,16 @@ const Form = (props: FormProps) => {
             name: isVoid(form.name),
             email: isVoid(form.email),
             phone: isVoid(form.phone),
+            alreadySent: isAlreadySent(),
+            apiError: false,
+            apiErrorMessage: undefined,
         });
 
-        if(isVoid(form.name) || isVoid(form.email) || isVoid(form.phone)) return;
+        if (isVoid(form.name) || isVoid(form.email) || isVoid(form.phone)) return;
 
-        // TODO: Implement API call to send email
+        if(isAlreadySent()) return;
 
-        setFormVoid();
+        sendMessage();
     }
 
     const setFormVoid = (): void => {
@@ -82,6 +83,40 @@ const Form = (props: FormProps) => {
 
     const isVoid = (value: string): boolean => {
         return value === "";
+    }
+
+    const setMessageAlreadySent = (): void => {
+        localStorage.setItem("alreadySent", String(Date.now()));
+    }
+
+    function isAlreadySent(): boolean {
+        return localStorage.getItem("alreadySent") !== null;
+    }
+
+    const sendMessage = (): void => {
+        fetch("/api/send-email", {
+            method: "POST",
+            headers: {
+                "Content-Type": "application/json",
+            },
+            body: JSON.stringify(form),
+        })
+            .then(() => {
+                setErrors({
+                    ...errors,
+                    apiError: false,
+                    apiErrorMessage: "Votre demande a bien été envoyée"
+                })
+                setFormVoid();
+                setMessageAlreadySent();
+            })
+            .catch(() => {
+                setErrors({
+                    ...errors,
+                    apiError: true,
+                    apiErrorMessage: "Une erreur est survenue, veuillez réessayer plus tard"
+                })
+            });
     }
 
     type FormChangeEvent = ChangeEvent<HTMLInputElement | HTMLTextAreaElement> | SelectChangeEvent;
@@ -161,8 +196,15 @@ const Form = (props: FormProps) => {
                     fontColor={colors.white}>
                 Envoyer
             </Button>
+            {errors.alreadySent ?
+                <p className="text-center text-red-500">Vous avez déjà envoyé un message, contactez-nous par téléphone
+                    pour
+                    plus d'information</p> : null}
+            {errors.apiErrorMessage ?
+                <p className={"text-center " + (errors.apiError ? "text-red-500" : "text-green-600")}>
+                    {errors.apiErrorMessage}</p> : null}
         </form>
     );
-};
+}
 
 export default Form;
