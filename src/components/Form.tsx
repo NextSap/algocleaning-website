@@ -57,14 +57,20 @@ const Form = (props: FormProps) => {
             name: isVoid(form.name),
             email: isVoid(form.email),
             phone: isVoid(form.phone),
-            alreadySent: isAlreadySent(),
+            alreadySent: false,
             apiError: false,
             apiErrorMessage: undefined,
         });
 
         if (isVoid(form.name) || isVoid(form.email) || isVoid(form.phone)) return;
 
-        if(isAlreadySent()) return;
+        if(isAlreadySent()){
+            setErrors({
+                ...errors,
+                alreadySent: true,
+            });
+            return;
+        }
 
         sendMessage();
     }
@@ -90,7 +96,12 @@ const Form = (props: FormProps) => {
     }
 
     function isAlreadySent(): boolean {
-        return localStorage.getItem("alreadySent") !== null;
+        const alreadySent = localStorage.getItem("alreadySent");
+        if(alreadySent !== null && Date.now() - Number(alreadySent) > 86400000) {
+            localStorage.removeItem("alreadySent");
+            return false;
+        }
+        return alreadySent !== null;
     }
 
     const sendMessage = (): void => {
@@ -101,7 +112,15 @@ const Form = (props: FormProps) => {
             },
             body: JSON.stringify(form),
         })
-            .then(() => {
+            .then((response) => {
+                if (response.status !== 200) {
+                    setErrors({
+                        ...errors,
+                        apiError: true,
+                        apiErrorMessage: "Une erreur est survenue, veuillez réessayer plus tard"
+                    })
+                    return;
+                }
                 setErrors({
                     ...errors,
                     apiError: false,
@@ -109,13 +128,6 @@ const Form = (props: FormProps) => {
                 })
                 setFormVoid();
                 setMessageAlreadySent();
-            })
-            .catch(() => {
-                setErrors({
-                    ...errors,
-                    apiError: true,
-                    apiErrorMessage: "Une erreur est survenue, veuillez réessayer plus tard"
-                })
             });
     }
 
@@ -198,9 +210,8 @@ const Form = (props: FormProps) => {
             </Button>
             {errors.alreadySent ?
                 <p className="text-center text-red-500">Vous avez déjà envoyé un message, contactez-nous par téléphone
-                    pour
-                    plus d'information</p> : null}
-            {errors.apiErrorMessage ?
+                    pour plus d'information</p> : null}
+            {errors.apiErrorMessage && !errors.alreadySent ?
                 <p className={"text-center " + (errors.apiError ? "text-red-500" : "text-green-600")}>
                     {errors.apiErrorMessage}</p> : null}
         </form>
