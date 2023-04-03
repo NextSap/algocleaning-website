@@ -7,16 +7,15 @@ import {useRouter} from "next/navigation";
 import {AppRouterInstance} from "next/dist/shared/lib/app-router-context";
 import SubTitle from "@/components/SubTitle";
 import ImageCard from "@/components/ImageCard";
-import Data from "../../public/Data.json";
-import Collapse from "@/components/Collapse";
 import Link from "next/link";
 import DescriptionCard from "@/components/DescriptionCard";
 import Contact from "@/components/Contact";
+import Faq from "@/components/Faq";
 
 const images: string[] = [
-    "https://nextsap.s-ul.eu/StcahbER",
-    "https://nextsap.s-ul.eu/StcahbER",
-    "https://nextsap.s-ul.eu/StcahbER",
+    "/images/photo-factice.jpeg",
+    "/images/photo-factice.jpeg",
+    "/images/photo-factice.jpeg",
 ];
 
 
@@ -72,21 +71,14 @@ const Home = () => {
                     </Button>
                 </div>
                 <div className="flex flex-col items-center w-full">
-                    <SubTitle>AlgoCleaning c'est aussi...</SubTitle>
+                    <SubTitle>AlgoFacade c'est aussi...</SubTitle>
                     <div
                         className="flex flex-col items-center justify-between w-[80%] space-y-10 md:flex-row md:space-y-0">
-                        <OtherProduct name="Toiture" image={images[0]}/>
+                        <OtherProduct name="Toitures" image={images[0]}/>
                         <OtherProduct name="Terrasses" image={images[0]}/>
                     </div>
                 </div>
-                <div className="flex flex-col items-center w-full mt-16">
-                    <SubTitle underline="150px">Les questions les plus posées</SubTitle>
-                    {Data.faq.map((faq, index) => {
-                        return (
-                            <Collapse key={index} content={faq.answer}>{faq.question}</Collapse>
-                        );
-                    })}
-                </div>
+                <Faq/>
                 <Contact/>
             </div>
         </div>

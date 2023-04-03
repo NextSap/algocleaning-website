@@ -1,8 +1,5 @@
 import React, {useState} from 'react';
 
-const whiteArrow = "https://nextsap.s-ul.eu/2ktjKAVA";
-const blackArrow = "https://nextsap.s-ul.eu/STJWP2Ia";
-
 type CollapseProps = {
     children: string;
     content: string;
@@ -17,7 +14,7 @@ const Collapse = (props: CollapseProps) => {
                 <span style={{fontWeight: 500}} className="flex justify-between items-center w-full text-dark py-3 text-[18px]">
                     {props.children}
                     <img style={{transform: open ? "rotate(0deg)" : "rotate(180deg)", height: "15px"}}
-                         alt="Flèche" src={blackArrow}
+                         alt="Flèche" src="/images/BlackArrow.png"
                     className="transition-all duration-300"/>
                 </span>
             </button>

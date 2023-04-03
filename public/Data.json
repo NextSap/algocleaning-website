@@ -4,12 +4,12 @@
     {
       "name": "Di Ilio Joachim",
       "phone": "0466 77 88 99",
-      "image": "https://www.quotatis.fr/conseils-travaux/wp-content/uploads/2017/07/nettoyage-fa%C3%A7ade-1.jpg"
+      "image": "/images/nettoyage-façade.jpg"
     },
     {
       "name": "Di Ilio Joachim",
       "phone": "0466 77 88 99",
-      "image": "https://www.quotatis.fr/conseils-travaux/wp-content/uploads/2017/07/nettoyage-fa%C3%A7ade-1.jpg"
+      "image": "/images/nettoyage-façade.jpg"
     }
   ],
   "faq": [
@@ -35,51 +35,51 @@
       {
         "title": "Lorem ipsum dolor sit amet",
         "description": "Lorem ipsum dolor sit amet, consectetur adipisicing elit. Architecto atque aut dicta harum omnis quis vero, vitae. Dolorem facilis id impedit, incidunt nemo rem repudiandae!",
-        "image": "https://www.quotatis.fr/conseils-travaux/wp-content/uploads/2017/07/nettoyage-fa%C3%A7ade-1.jpg"
+        "image": "/images/nettoyage-façade.jpg"
       },
       {
         "title": "Lorem ipsum dolor sit amet",
         "description": "Lorem ipsum dolor sit amet, consectetur adipisicing elit. Architecto atque aut dicta harum omnis quis vero, vitae. Dolorem facilis id impedit, incidunt nemo rem repudiandae!",
-        "image": "https://www.quotatis.fr/conseils-travaux/wp-content/uploads/2017/07/nettoyage-fa%C3%A7ade-1.jpg"
+        "image": "/images/nettoyage-façade.jpg"
       },
       {
         "title": "Lorem ipsum dolor sit amet",
         "description": "Lorem ipsum dolor sit amet, consectetur adipisicing elit. Architecto atque aut dicta harum omnis quis vero, vitae. Dolorem facilis id impedit, incidunt nemo rem repudiandae!",
-        "image": "https://www.quotatis.fr/conseils-travaux/wp-content/uploads/2017/07/nettoyage-fa%C3%A7ade-1.jpg"
+        "image": "/images/nettoyage-façade.jpg"
       }
     ],
     "terrasses": [
       {
         "title": "Lorem ipsum dolor sit amet",
         "description": "Lorem ipsum dolor sit amet, consectetur adipisicing elit. Architecto atque aut dicta harum omnis quis vero, vitae. Dolorem facilis id impedit, incidunt nemo rem repudiandae!",
-        "image": "https://www.quotatis.fr/conseils-travaux/wp-content/uploads/2017/07/nettoyage-fa%C3%A7ade-1.jpg"
+        "image": "/images/nettoyage-façade.jpg"
       },
       {
         "title": "Lorem ipsum dolor sit amet",
         "description": "Lorem ipsum dolor sit amet, consectetur adipisicing elit. Architecto atque aut dicta harum omnis quis vero, vitae. Dolorem facilis id impedit, incidunt nemo rem repudiandae!",
-        "image": "https://www.quotatis.fr/conseils-travaux/wp-content/uploads/2017/07/nettoyage-fa%C3%A7ade-1.jpg"
+        "image": "/images/nettoyage-façade.jpg"
       },
       {
         "title": "Lorem ipsum dolor sit amet",
         "description": "Lorem ipsum dolor sit amet, consectetur adipisicing elit. Architecto atque aut dicta harum omnis quis vero, vitae. Dolorem facilis id impedit, incidunt nemo rem repudiandae!",
-        "image": "https://www.quotatis.fr/conseils-travaux/wp-content/uploads/2017/07/nettoyage-fa%C3%A7ade-1.jpg"
+        "image": "/images/nettoyage-façade.jpg"
       }
     ],
     "toitures": [
       {
         "title": "Lorem ipsum dolor sit amet",
         "description": "Lorem ipsum dolor sit amet, consectetur adipisicing elit. Architecto atque aut dicta harum omnis quis vero, vitae. Dolorem facilis id impedit, incidunt nemo rem repudiandae!",
-        "image": "https://www.quotatis.fr/conseils-travaux/wp-content/uploads/2017/07/nettoyage-fa%C3%A7ade-1.jpg"
+        "image": "/images/nettoyage-façade.jpg"
       },
       {
         "title": "Lorem ipsum dolor sit amet",
         "description": "Lorem ipsum dolor sit amet, consectetur adipisicing elit. Architecto atque aut dicta harum omnis quis vero, vitae. Dolorem facilis id impedit, incidunt nemo rem repudiandae!",
-        "image": "https://www.quotatis.fr/conseils-travaux/wp-content/uploads/2017/07/nettoyage-fa%C3%A7ade-1.jpg"
+        "image": "/images/nettoyage-façade.jpg"
       },
       {
         "title": "Lorem ipsum dolor sit amet",
         "description": "Lorem ipsum dolor sit amet, consectetur adipisicing elit. Architecto atque aut dicta harum omnis quis vero, vitae. Dolorem facilis id impedit, incidunt nemo rem repudiandae!",
-        "image": "https://www.quotatis.fr/conseils-travaux/wp-content/uploads/2017/07/nettoyage-fa%C3%A7ade-1.jpg"
+        "image": "/images/nettoyage-façade.jpg"
       }
     ]
   }

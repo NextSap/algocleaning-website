@@ -2,8 +2,6 @@ import React from 'react';
 import Link from "next/link";
 import {NextRouter, useRouter} from "next/router";
 
-const logo = "https://nextsap.s-ul.eu/8s9tyAKx";
-
 const Header = () => {
     const route: NextRouter = useRouter();
     const isSelectedRoute = (path: string): boolean => {
@@ -12,7 +10,9 @@ const Header = () => {
 
     return (
         <div className="flex justify-between w-full h-20">
-            <img src={logo} alt="Logo" className="object-cover ml-5" />
+            <Link href="/">
+                <img src="/images/Logo.png" alt="Logo" className="object-cover ml-5 h-full"/>
+            </Link>
             <nav className="flex justify-around items-center w-[300px] text-[22px] text-dark">
                 <Link
                     className={(isSelectedRoute("/") ? "border-b-2 border-b-dark" : "border-none")}

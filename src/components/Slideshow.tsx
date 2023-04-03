@@ -1,14 +1,6 @@
 import React from 'react';
 import {Slide} from 'react-slideshow-image';
-import 'react-slideshow-image/dist/styles.css'
-
-const divStyle = {
-    display: 'flex',
-    alignItems: 'center',
-    justifyContent: 'center',
-    backgroundSize: 'cover',
-    height: '400px'
-}
+import 'react-slideshow-image/dist/styles.css';
 
 type SlideshowProps = {
     children: React.ReactNode,

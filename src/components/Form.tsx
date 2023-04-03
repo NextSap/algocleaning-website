@@ -1,9 +1,8 @@
-import React, {ChangeEvent, FormEvent, useEffect, useState} from 'react';
+import React, {ChangeEvent, FormEvent, useState} from 'react';
 import {FormControl, InputLabel, MenuItem, Select, SelectChangeEvent, TextField} from "@mui/material";
 import Button from "@/components/Button";
 import {colors} from "@/utils/ColorsUtils";
 import {FormStateType} from "@/utils/type";
-import {func} from "prop-types";
 
 const availableAreas: string[] = ["< 50 m²", "50 - 100 m²", "> 100 m²"];
 const availableDomains: string[] = ["Façades", "Terrasses", "Toitures"];
@@ -71,7 +70,6 @@ const Form = (props: FormProps) => {
             });
             return;
         }
-
         sendMessage();
     }
 

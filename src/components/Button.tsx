@@ -1,8 +1,6 @@
 import React, {ComponentPropsWithoutRef, useState} from 'react';
 import {colors} from "@/utils/ColorsUtils";
 
-const whiteArrow = "https://nextsap.s-ul.eu/2ktjKAVA";
-
 type ButtonProps = {
     backgroundColor: string;
     fontColor: string;
@@ -49,7 +47,7 @@ const ButtonComponent = ({
                 }}
                 onMouseEnter={() => setHover(true)}
                 onMouseLeave={() => setHover(false)}>
-                {withArrow ? <img src={whiteArrow} alt="Flèche" style={{height: fontSize}}/> : ""}
+                {withArrow ? <img src="/images/WhiteArrow.png" alt="Flèche" style={{height: fontSize}}/> : ""}
                 {props.children}
             </button>
 
