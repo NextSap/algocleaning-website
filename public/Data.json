@@ -1,85 +1,60 @@
 {
-  "title": "Entertien professionnel de façades",
+  "title": "Nettoyage de façades en Wallonie et à Bruxelles",
+  "logo": "/images/Logo1.png",
+  "slideshow": [
+    "/images/Slideshow.webp"
+  ],
+  "whyalgofacade": "On entend souvent que les façades crépis deviennent vertes avec le temps. Il est normal de penser que ces traces vertes sont dues uniquement à la végétation apparente autour du bâtiment. Mais pas dans tous les cas…\n\nLes façades crépis sont particulièrement sujettes à la croissance d'algues en raison de leur texture poreuse. Les algues se nourrissent de l'humidité et de substances organiques, comme les spores de moisissures. Pour toutes ces raisons, les algues se développent rapidement et forment des taches verdâtres sur la surface de votre façade.",
   "contact": [
     {
       "name": "Di Ilio Joachim",
-      "phone": "0466 77 88 99",
-      "image": "/images/nettoyage-façade.jpg"
+      "phone": "0493 84 43 72",
+      "image": "/images/Logo.png"
     },
     {
-      "name": "Di Ilio Joachim",
-      "phone": "0466 77 88 99",
-      "image": "/images/nettoyage-façade.jpg"
+      "name": "Mousitsas Sébastien",
+      "phone": "0479 42 70 40",
+      "image": "/images/Logo.png"
     }
   ],
   "faq": [
     {
-      "question": "Ceci est un exemple de question ?",
-      "answer": "Ceci est un exemple de réponse"
+      "question": "Comment procédons-nous pour le nettoyage des façades ?",
+      "answer": "Nous vous proposons plusieurs techniques : nettoyage à la pression et nettoyage par pulvérisation ainsi que différents traitements après nettoyage (traitement hydrofuge, traitement anti-mousse, remise en peinture, pose d’un crépi). Une préparation soigneuse du chantier est effectuée avant toute opération et nous nous occupons de la gestion des déchets."
     },
     {
-      "question": "Ceci est un exemple de question ?",
-      "answer": "Ceci est un exemple de réponse"
+      "question": "Quel est le délais avant de recevoir mon devis ?",
+      "answer": "Dans les 48 heures après visite sur place."
     },
     {
-      "question": "Ceci est un exemple de question ?",
-      "answer": "Ceci est un exemple de réponse"
+      "question": "Pourquoi il ne faut pas attendre pour démousser sa toiture ?",
+      "answer": "Bien souvent négligé, l’entretien de la toiture d’une habitation est pourtant une opération capitale. La toiture est l'une des structures les plus exposées aux agressions externes avec les changements climatiques, la pollution, les déchets végétaux – mousse et lichen - ou encore les feuilles mortes. Tous ces éléments provoquent des effets négatifs, nuisibles pour la longévité de la toiture. Ils peuvent s’introduire à travers les tuiles et retenir l’eau de pluie, attaquant ainsi l’étanchéité du toit."
     },
     {
-      "question": "Ceci est un exemple de question ?",
-      "answer": "Ceci est un exemple de réponse"
+      "question": "Quelles sont les terrasses prises en charge par l'équipe Algo Façade ?",
+      "answer": "Notre équipe Algo Façade peut prendre en charge toutes catégories de terrasse en bois, carrelages, pierres bleues et klinkers."
     }
   ],
   "data": {
     "façades": [
       {
-        "title": "Lorem ipsum dolor sit amet",
-        "description": "Lorem ipsum dolor sit amet, consectetur adipisicing elit. Architecto atque aut dicta harum omnis quis vero, vitae. Dolorem facilis id impedit, incidunt nemo rem repudiandae!",
-        "image": "/images/nettoyage-façade.jpg"
-      },
-      {
-        "title": "Lorem ipsum dolor sit amet",
-        "description": "Lorem ipsum dolor sit amet, consectetur adipisicing elit. Architecto atque aut dicta harum omnis quis vero, vitae. Dolorem facilis id impedit, incidunt nemo rem repudiandae!",
-        "image": "/images/nettoyage-façade.jpg"
-      },
-      {
-        "title": "Lorem ipsum dolor sit amet",
-        "description": "Lorem ipsum dolor sit amet, consectetur adipisicing elit. Architecto atque aut dicta harum omnis quis vero, vitae. Dolorem facilis id impedit, incidunt nemo rem repudiandae!",
-        "image": "/images/nettoyage-façade.jpg"
+        "title": "Comment protéger ma façade ?",
+        "description": "Après avoir nettoyée votre façade, vous voulez faire durer le résultat ! À cet effet, grâce à notre partenaire Sto, qui a conçu des peintures de façades StoColor Lotusan® G et StoColor Dryonic® G, nous sommes en mesures de faire pérenniser notre travail dans le temps. En optant pour une peinture de façade intelligente, vous effectuerez automatiquement un bon investissement à long terme. Une peinture de façade présente des avantages d’utilisation précieux que les peintures conventionnelles sont incapables de fournir tels qu’une protection supplémentaire, une tenue à long terme, une stabilité des teintes et la durabilité.",
+        "image": "/images/façades-1.jpg"
       }
     ],
     "terrasses": [
       {
-        "title": "Lorem ipsum dolor sit amet",
-        "description": "Lorem ipsum dolor sit amet, consectetur adipisicing elit. Architecto atque aut dicta harum omnis quis vero, vitae. Dolorem facilis id impedit, incidunt nemo rem repudiandae!",
-        "image": "/images/nettoyage-façade.jpg"
-      },
-      {
-        "title": "Lorem ipsum dolor sit amet",
-        "description": "Lorem ipsum dolor sit amet, consectetur adipisicing elit. Architecto atque aut dicta harum omnis quis vero, vitae. Dolorem facilis id impedit, incidunt nemo rem repudiandae!",
-        "image": "/images/nettoyage-façade.jpg"
-      },
-      {
-        "title": "Lorem ipsum dolor sit amet",
-        "description": "Lorem ipsum dolor sit amet, consectetur adipisicing elit. Architecto atque aut dicta harum omnis quis vero, vitae. Dolorem facilis id impedit, incidunt nemo rem repudiandae!",
-        "image": "/images/nettoyage-façade.jpg"
+        "title": "Raviver votre extérieur",
+        "description": "Le froid et les longues périodes de pluie salissent et ternissent le revêtement, lui donnant un aspect négligé. Les algues et la mousse poussent ensuite sur les Klinkers et les joints de ciment, ce qui engendre une couche de vert sale, peu agréable à regarder. N'oubliez pas qu'une terrasse non entretenue et recouverte de mousse peut être glissante et devenir un danger, notamment pour les enfants qui jouent et courent sans y faire attention. \n\nPour limiter ces risques, nous utilisons des produits professionnels indiqués pour le nettoyage et l’hydrofugation des surfaces extérieures.",
+        "image": "/images/terrasses-1.webp"
       }
     ],
     "toitures": [
       {
-        "title": "Lorem ipsum dolor sit amet",
-        "description": "Lorem ipsum dolor sit amet, consectetur adipisicing elit. Architecto atque aut dicta harum omnis quis vero, vitae. Dolorem facilis id impedit, incidunt nemo rem repudiandae!",
-        "image": "/images/nettoyage-façade.jpg"
-      },
-      {
-        "title": "Lorem ipsum dolor sit amet",
-        "description": "Lorem ipsum dolor sit amet, consectetur adipisicing elit. Architecto atque aut dicta harum omnis quis vero, vitae. Dolorem facilis id impedit, incidunt nemo rem repudiandae!",
-        "image": "/images/nettoyage-façade.jpg"
-      },
-      {
-        "title": "Lorem ipsum dolor sit amet",
-        "description": "Lorem ipsum dolor sit amet, consectetur adipisicing elit. Architecto atque aut dicta harum omnis quis vero, vitae. Dolorem facilis id impedit, incidunt nemo rem repudiandae!",
-        "image": "/images/nettoyage-façade.jpg"
+        "title": "Garder une toiture propre et entretenue",
+        "description": "Si votre toiture a subi des dégâts durant l'hiver, le printemps et l’été sont les saisons parfaites pour effectuer le nettoyage annuel, plus aisé par temps sec. L'état des corniches se vérifie en fin d'automne après que les feuilles soient tombées. \n\n\u200BNous vous conseillons la technique de nettoyage la mieux adaptée : soit un nettoyage haute pression, doux pour vos tuiles ou ardoises, soit un nettoyage à la brosse.",
+        "image": "/images/toitures-1.JPG"
       }
     ]
   }

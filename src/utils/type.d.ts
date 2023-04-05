@@ -46,7 +46,6 @@ export type FormStateType = {
     name: string,
     email: string,
     phone: string,
-    address: string,
     area: string,
     domain: string,
     message: string,

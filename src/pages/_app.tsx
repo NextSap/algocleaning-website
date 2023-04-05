@@ -9,7 +9,8 @@ export default function App({Component, pageProps}: AppProps) {
     return (
         <>
             <Head>
-                <title>AlgoFacade</title>
+                <title>Algo Façade</title>
+                <link rel="shortcut icon" href="/images/ShortLogo.ico" />
             </Head>
             <main className={myFont.className}>
                 <Component {...pageProps} />

@@ -13,8 +13,8 @@ export default function POST(req: NextApiRequest, res: NextApiResponse<ResponseT
         const message: FormStateType = req.body;
 
         const transporter = nodemailer.createTransport({
-            host: process.env.STMPHOST,
-            port: process.env.STMPPORT,
+            host: process.env.SMTPSERVER,
+            port: process.env.SMTPPORT,
             service: process.env.SERVICE,
             auth: {
                 user: process.env.EMAILFROM,
@@ -25,9 +25,11 @@ export default function POST(req: NextApiRequest, res: NextApiResponse<ResponseT
         const mailOptions = {
             from: process.env.EMAILFROM,
             to: process.env.EMAILTO,
-            subject: `${message.domain} - ${message.name}`,
+            subject: `[Algo Façade] Contact - ${message.name}`,
             html: messageTemplate(message),
         };
+
+        //
 
         transporter.sendMail(mailOptions, function (error: Error, info: SentMessageInfo) {
             if (error) {
@@ -43,13 +45,14 @@ const messageTemplate = (message: FormStateType): string => {
     const stringifiedMessage = JSON.parse(JSON.stringify(message));
     return `
         <div>
-            <h3>Concerne les ${stringifiedMessage.domain} - ${stringifiedMessage.area}</h3>
-            <br>
+            <h3>Coordonées</h3>
+            <p>Email: ${stringifiedMessage.email}</p>
             <p>Nom: ${stringifiedMessage.name}</p>
             <p>Téléphone : ${stringifiedMessage.phone}</p>
-            <p>Email: ${stringifiedMessage.email}</p>
+            <p>Superficie : ${stringifiedMessage.area}</p>
+            <p>Domaine : ${stringifiedMessage.domain}</p>
             <br>
-            <p>Message:</p>
+            <p>Message :</p>
             <p>${stringifiedMessage.message}</p>
         </div>
     `

@@ -1,7 +1,13 @@
-Env variables :
+# AlgoFacade
+NextJS WebSite for AlgoFacade
+
+## Env variables :
+`
 EMAILFROM
-EMAILTO
+EMAILTO = "ms.isolation.crepis@gmail.com"
 PASSWORD
 SERVICE
 SMTPSERVER
 SMTPPORT
+`
+

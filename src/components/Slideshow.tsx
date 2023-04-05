@@ -19,7 +19,7 @@ const Slideshow = ({canSwipe = false, arrows = false, ...props}: SlideshowProps)
                 {props.children}
             </div>
             <Slide duration={props.duration} transitionDuration={props.transitionDuration} canSwipe={canSwipe}
-                   arrows={arrows} pauseOnHover={false}>
+                   arrows={arrows} pauseOnHover={false} autoplay={false}>
                 {props.images.map((slideImage, index) => (
                     <div key={index}>
                         <div className="flex justify-center items-center bg-cover bg-center"

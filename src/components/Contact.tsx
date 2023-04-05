@@ -13,7 +13,7 @@ const Contact = (props: ContactProps) => {
     return (
         <div className="flex flex-col items-center w-full">
             <SubTitle id="contact" underline="50px">Contact</SubTitle>
-            <div className="flex justify-around w-full space-x-2 md:w-[60%]">
+            <div className="flex flex-col justify-around w-full space-x-2 gap-5 md:w-[60%] md:flex-row md:gap-0">
                 {Data.contact.map((contact: ContactType, index: number) => {
                     return (
                         <ContactProfile key={index} phone={contact.phone} image={contact.image}>

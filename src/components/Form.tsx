@@ -17,7 +17,6 @@ type FormProps = {
 type ErrorState = {
     name: boolean,
     email: boolean,
-    phone: boolean,
     alreadySent: boolean,
     apiError: boolean,
     apiErrorMessage: "Une erreur est survenue, veuillez réessayer plus tard" | "Votre demande a bien été envoyée" | undefined,
@@ -28,7 +27,6 @@ const Form = (props: FormProps) => {
         name: "",
         email: "",
         phone: "",
-        address: "",
         area: "",
         domain: props.domain ? props.domain : "",
         message: "",
@@ -37,7 +35,6 @@ const Form = (props: FormProps) => {
     const [errors, setErrors] = useState<ErrorState>({
         name: false,
         email: false,
-        phone: false,
         alreadySent: false,
         apiError: false,
         apiErrorMessage: undefined
@@ -55,13 +52,12 @@ const Form = (props: FormProps) => {
         setErrors({
             name: isVoid(form.name),
             email: isVoid(form.email),
-            phone: isVoid(form.phone),
             alreadySent: false,
             apiError: false,
             apiErrorMessage: undefined,
         });
 
-        if (isVoid(form.name) || isVoid(form.email) || isVoid(form.phone)) return;
+        if (isVoid(form.name) || isVoid(form.email)) return;
 
         if(isAlreadySent()){
             setErrors({
@@ -78,7 +74,6 @@ const Form = (props: FormProps) => {
             name: "",
             email: "",
             phone: "",
-            address: "",
             area: "",
             domain: "",
             message: "",
@@ -144,8 +139,6 @@ const Form = (props: FormProps) => {
                     size={props.size}
                     sx={{width: "45%"}}/>
                 <TextField
-                    error={errors.phone}
-                    helperText={errors.phone && "Entrez un numéro de téléphone correct"}
                     value={form.phone}
                     onChange={handleChange}
                     name="phone"

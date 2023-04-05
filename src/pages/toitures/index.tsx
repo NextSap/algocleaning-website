@@ -9,14 +9,17 @@ import {DataType, FAQType} from "@/utils/type";
 import Contact from "@/components/Contact";
 import ContactUsButton from "@/components/ContactUsButton";
 import Faq from "@/components/Faq";
-
-const image = "https://www.quotatis.fr/conseils-travaux/wp-content/uploads/2017/07/nettoyage-fa%C3%A7ade-1.jpg"
+import Head from "next/head";
+import Footer from "@/components/Footer";
 
 const Toitures = () => {
     return (
         <div className="flex flex-col items-center w-full">
+            <Head>
+                <title>Algo Façade - Toitures</title>
+            </Head>
             <Header/>
-            <ImageCard className="mt-5" borderRadius={"10px"} image={"/images/nettoyage-façade.jpg"} height={"200px"} width={"80%"}>Toitures</ImageCard>
+            <ImageCard className="mt-5" borderRadius={"10px"} image={"/images/toitures-2.webp"} height={"300px"} width={"80%"}>Toitures</ImageCard>
             <ContactUsButton/>
             <div className="flex flex-col gap-10 w-[80%] mt-20">
                 {Data.data.toitures.map((item:DataType, index:number) => (
@@ -27,6 +30,7 @@ const Toitures = () => {
             <ContactUsButton/>
             <Faq/>
             <Contact domain={"Toitures"}/>
+            <Footer/>
         </div>
     );
 };
