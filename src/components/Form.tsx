@@ -20,6 +20,7 @@ type ErrorState = {
     alreadySent: boolean,
     apiError: boolean,
     apiErrorMessage: "Une erreur est survenue, veuillez réessayer plus tard" | "Votre demande a bien été envoyée" | undefined,
+    apiLoading: boolean,
 }
 
 const Form = (props: FormProps) => {
@@ -37,7 +38,8 @@ const Form = (props: FormProps) => {
         email: false,
         alreadySent: false,
         apiError: false,
-        apiErrorMessage: undefined
+        apiErrorMessage: undefined,
+        apiLoading: false,
     });
 
     const handleChange = (event: FormChangeEvent) => {
@@ -55,6 +57,7 @@ const Form = (props: FormProps) => {
             alreadySent: false,
             apiError: false,
             apiErrorMessage: undefined,
+            apiLoading: true,
         });
 
         if (isVoid(form.name) || isVoid(form.email)) return;
@@ -106,6 +109,7 @@ const Form = (props: FormProps) => {
             body: JSON.stringify(form),
         })
             .then((response) => {
+
                 if (response.status !== 200) {
                     setErrors({
                         ...errors,
@@ -117,10 +121,12 @@ const Form = (props: FormProps) => {
                 setErrors({
                     ...errors,
                     apiError: false,
-                    apiErrorMessage: "Votre demande a bien été envoyée"
+                    apiErrorMessage: "Votre demande a bien été envoyée",
+                    apiLoading: false,
                 })
                 setFormVoid();
                 setMessageAlreadySent();
+
             });
     }
 
@@ -194,10 +200,11 @@ const Form = (props: FormProps) => {
                 multiline/>
 
             <Button type="submit"
-                    backgroundColor={colors.main}
+                    backgroundColor={errors.apiLoading ? colors.lightGrey : colors.main}
                     hoverBackgroundColor={colors.lightGrey}
-                    fontColor={colors.white}>
-                Envoyer
+                    fontColor={colors.white}
+                    disabled={errors.apiLoading}>
+                {errors.apiLoading ? "Envoi en cours..." : "Envoyer"}
             </Button>
             {errors.alreadySent ?
                 <p className="text-center text-red-500">Vous avez déjà envoyé un message, contactez-nous par téléphone

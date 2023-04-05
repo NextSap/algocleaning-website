@@ -13,9 +13,10 @@ export default function POST(req: NextApiRequest, res: NextApiResponse<ResponseT
         const message: FormStateType = req.body;
 
         const transporter = nodemailer.createTransport({
-            host: process.env.SMTPSERVER,
-            port: process.env.SMTPPORT,
-            service: process.env.SERVICE,
+            host: "smtp.gmail.com",
+            port: 465,
+            service: "gmail",
+            secure: true,
             auth: {
                 user: process.env.EMAILFROM,
                 pass: process.env.PASSWORD,
