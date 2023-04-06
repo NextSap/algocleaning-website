@@ -19,7 +19,9 @@ const Toitures = () => {
                 <title>Algo Façade - Toitures</title>
             </Head>
             <Header/>
-            <ImageCard className="mt-5" borderRadius={"10px"} image={"/images/toitures-2.webp"} height={"300px"} width={"80%"}>Toitures</ImageCard>
+            <ImageCard className="mt-5" borderRadius={"10px"} image={"/assets/images/toitures/3.webp"} height={"300px"} width={"80%"}>
+                Toitures
+            </ImageCard>
             <ContactUsButton/>
             <div className="flex flex-col gap-10 w-[80%] mt-20">
                 {Data.data.toitures.map((item:DataType, index:number) => (

@@ -1,5 +1,6 @@
 import React, {ComponentPropsWithoutRef, useState} from 'react';
 import {colors} from "@/utils/ColorsUtils";
+import Data from "../../public/Data.json";
 
 type ButtonProps = {
     backgroundColor: string;
@@ -47,7 +48,7 @@ const ButtonComponent = ({
                 }}
                 onMouseEnter={() => setHover(true)}
                 onMouseLeave={() => setHover(false)}>
-                {withArrow ? <img src="/images/WhiteArrow.png" alt="Flèche" style={{height: fontSize}}/> : ""}
+                {withArrow ? <img src={Data.whitearrow} alt="Flèche" style={{height: fontSize}}/> : ""}
                 {props.children}
             </button>
 

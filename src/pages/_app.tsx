@@ -10,7 +10,11 @@ export default function App({Component, pageProps}: AppProps) {
         <>
             <Head>
                 <title>Algo Façade</title>
-                <link rel="shortcut icon" href="/images/ShortLogo.ico" />
+                <link rel="shortcut icon" href="/assets/ShortLogo.ico" />
+                <meta
+                    name="description"
+                    content="Algo Façade, votre expert en nettoyage de façades, terrasses et toitures. Nos professionnels qualifiés utilisent des méthodes respectueuses de l'environnement pour éliminer les algues, mousses et autres salissures qui ternissent l'aspect de votre habitation. Contactez-nous dès maintenant pour un devis gratuit et retrouvez une maison comme neuve !"
+                />
             </Head>
             <main className={myFont.className}>
                 <Component {...pageProps} />

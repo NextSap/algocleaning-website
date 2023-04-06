@@ -1,4 +1,5 @@
 import React, {useState} from 'react';
+import Data from "../../public/Data.json";
 
 type CollapseProps = {
     children: string;
@@ -14,7 +15,7 @@ const Collapse = (props: CollapseProps) => {
                 <span style={{fontWeight: 500}} className="flex justify-between items-center w-full text-dark py-3 text-[18px] text-left">
                     {props.children}
                     <img style={{transform: open ? "rotate(0deg)" : "rotate(180deg)", height: "15px", marginLeft: "50px"}}
-                         alt="Flèche" src="/images/BlackArrow.png"
+                         alt="Flèche" src={Data.blackarrow}
                     className="transition-all duration-300"/>
                 </span>
             </button>

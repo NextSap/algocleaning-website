@@ -1,20 +1,20 @@
 {
   "title": "Nettoyage de façades en Wallonie et à Bruxelles",
-  "logo": "/images/Logo1.png",
+  "logo": "/assets/images/other/Logo.webp",
   "slideshow": [
-    "/images/Slideshow.webp"
+    "/assets/images/slideshow/1.webp"
   ],
   "whyalgofacade": "On entend souvent que les façades crépis deviennent vertes avec le temps. Il est normal de penser que ces traces vertes sont dues uniquement à la végétation apparente autour du bâtiment. Mais pas dans tous les cas…\n\nLes façades crépis sont particulièrement sujettes à la croissance d'algues en raison de leur texture poreuse. Les algues se nourrissent de l'humidité et de substances organiques, comme les spores de moisissures. Pour toutes ces raisons, les algues se développent rapidement et forment des taches verdâtres sur la surface de votre façade.",
   "contact": [
     {
       "name": "Di Ilio Joachim",
       "phone": "0493 84 43 72",
-      "image": "/images/Logo.png"
+      "image": "/assets/images/contact/1.webp"
     },
     {
       "name": "Mousitsas Sébastien",
       "phone": "0479 42 70 40",
-      "image": "/images/Logo.png"
+      "image": "/assets/images/contact/1.webp"
     }
   ],
   "faq": [
@@ -40,22 +40,24 @@
       {
         "title": "Comment protéger ma façade ?",
         "description": "Après avoir nettoyée votre façade, vous voulez faire durer le résultat ! À cet effet, grâce à notre partenaire Sto, qui a conçu des peintures de façades StoColor Lotusan® G et StoColor Dryonic® G, nous sommes en mesures de faire pérenniser notre travail dans le temps. En optant pour une peinture de façade intelligente, vous effectuerez automatiquement un bon investissement à long terme. Une peinture de façade présente des avantages d’utilisation précieux que les peintures conventionnelles sont incapables de fournir tels qu’une protection supplémentaire, une tenue à long terme, une stabilité des teintes et la durabilité.",
-        "image": "/images/façades-1.jpg"
+        "image": "/assets/images/façades/2.webp"
       }
     ],
     "terrasses": [
       {
         "title": "Raviver votre extérieur",
         "description": "Le froid et les longues périodes de pluie salissent et ternissent le revêtement, lui donnant un aspect négligé. Les algues et la mousse poussent ensuite sur les Klinkers et les joints de ciment, ce qui engendre une couche de vert sale, peu agréable à regarder. N'oubliez pas qu'une terrasse non entretenue et recouverte de mousse peut être glissante et devenir un danger, notamment pour les enfants qui jouent et courent sans y faire attention. \n\nPour limiter ces risques, nous utilisons des produits professionnels indiqués pour le nettoyage et l’hydrofugation des surfaces extérieures.",
-        "image": "/images/terrasses-1.webp"
+        "image": "/assets/images/terrasses/2.webp"
       }
     ],
     "toitures": [
       {
         "title": "Garder une toiture propre et entretenue",
         "description": "Si votre toiture a subi des dégâts durant l'hiver, le printemps et l’été sont les saisons parfaites pour effectuer le nettoyage annuel, plus aisé par temps sec. L'état des corniches se vérifie en fin d'automne après que les feuilles soient tombées. \n\n\u200BNous vous conseillons la technique de nettoyage la mieux adaptée : soit un nettoyage haute pression, doux pour vos tuiles ou ardoises, soit un nettoyage à la brosse.",
-        "image": "/images/toitures-1.JPG"
+        "image": "/assets/images/toitures/2.webp"
       }
     ]
-  }
+  },
+  "whitearrow": "/assets/images/other/WhiteArrow.webp",
+  "blackarrow": "/assets/images/other/BlackArrow.webp"
 }

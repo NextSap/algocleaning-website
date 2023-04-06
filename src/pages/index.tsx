@@ -36,7 +36,7 @@ const Home = () => {
             <div className="flex flex-col items-center mt-14">
                 <div className="w-[80%]">
                     <DescriptionCard description={Data.whyalgofacade}
-                                     image={"/images/WhyAlgoFacade.jpg"}
+                                     image={"/assets/images/other/WhyAlgoFacade.webp"}
                                      imagePosition="left">
                         Pourquoi Algo Façade ?
                     </DescriptionCard>
@@ -45,7 +45,7 @@ const Home = () => {
             <div className="flex flex-col items-center">
                 <SubTitle id="services" underline={"40px"}>Services</SubTitle>
                 <ImageCard borderRadius="10px"
-                           image={"/images/façades.JPEG"}
+                           image={"/assets/images/façades/1.webp"}
                            height="300px" width="80%">
                     Façades
                 </ImageCard>
@@ -72,8 +72,8 @@ const Home = () => {
                     <SubTitle>Algo Façade c'est aussi...</SubTitle>
                     <div
                         className="flex flex-col items-center justify-between w-[80%] space-y-10 md:flex-row md:space-y-0">
-                        <OtherProduct name="Toitures" image={"/images/toitures.JPG"}/>
-                        <OtherProduct name="Terrasses" image={"/images/terrasses.webp"}/>
+                        <OtherProduct name="Toitures" image={"/assets/images/toitures/1.webp"}/>
+                        <OtherProduct name="Terrasses" image={"/assets/images/terrasses/1.webp"}/>
                     </div>
                 </div>
                 <Faq/>

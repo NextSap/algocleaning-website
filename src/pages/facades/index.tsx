@@ -18,15 +18,17 @@ const Façades = () => {
                 <title>Algo Façade - Façades</title>
             </Head>
             <Header/>
-            <ImageCard className="mt-5" borderRadius={"10px"} image="/images/façades.JPEG" height={"300px"} width={"80%"}>Façades</ImageCard>
+            <ImageCard className="mt-5" borderRadius={"10px"} image="/assets//images/façades/1.webp" height={"300px"} width={"80%"}>
+                Façades
+            </ImageCard>
             <ContactUsButton/>
             <div className="flex flex-col gap-10 w-[80%] mt-20">
                 {Data.data.façades.map((item: DataType, index: number) => (
                     <DescriptionCard imagePosition={index % 2 === 0 ? "left" : "right"} key={index}
                                      description={item.description} image={item.image}>{item.title}</DescriptionCard>
                 ))}
-                <VideoDescriptionCard video={"/images/Lotusan.mp4"}>StolColor Lotusan</VideoDescriptionCard>
-                <VideoDescriptionCard video={"/images/Dryonic.mp4"}>StolColor Dryonic</VideoDescriptionCard>
+                <VideoDescriptionCard video={"/assets/videos/Lotusan.mp4"}>StoColor Lotusan</VideoDescriptionCard>
+                <VideoDescriptionCard video={"/assets/videos/Dryonic.mp4"}>StoColor Dryonic</VideoDescriptionCard>
             </div>
             <ContactUsButton/>
             <Faq/>
