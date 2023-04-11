@@ -2,10 +2,8 @@ import React from 'react';
 import Header from "@/components/Header";
 import ImageCard from "@/components/ImageCard";
 import DescriptionCard from "@/components/DescriptionCard";
-import SubTitle from "@/components/SubTitle";
 import Data from "../../../public/Data.json";
-import Collapse from "@/components/Collapse";
-import {DataType, FAQType} from "@/utils/type";
+import {DataType} from "@/utils/type";
 import Contact from "@/components/Contact";
 import ContactUsButton from "@/components/ContactUsButton";
 import Faq from "@/components/Faq";
@@ -16,7 +14,7 @@ const Toitures = () => {
     return (
         <div className="flex flex-col items-center w-full">
             <Head>
-                <title>Algo Façade - Toitures</title>
+                <title>Algo Façade - Nettoyage Toiture</title>
             </Head>
             <Header/>
             <ImageCard className="mt-5" borderRadius={"10px"} image={"/assets/images/toitures/3.webp"} height={"300px"} width={"80%"}>

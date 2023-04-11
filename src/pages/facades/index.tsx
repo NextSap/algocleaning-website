@@ -15,7 +15,7 @@ const Façades = () => {
     return (
         <div className="flex flex-col items-center w-full">
             <Head>
-                <title>Algo Façade - Façades</title>
+                <title>Algo Façade - Nettoyage Façade</title>
             </Head>
             <Header/>
             <ImageCard className="mt-5" borderRadius={"10px"} image="/assets//images/façades/1.webp" height={"300px"} width={"80%"}>

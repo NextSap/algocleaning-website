@@ -13,11 +13,103 @@ import Contact from "@/components/Contact";
 import Faq from "@/components/Faq";
 import Data from "../../public/Data.json";
 import Footer from "@/components/Footer";
+import {LocalBusinessJsonLd, OrganizationJsonLd, NextSeo} from "next-seo";
+
 
 const Home = () => {
     const router: AppRouterInstance = useRouter();
     return (
         <div>
+            <NextSeo
+                openGraph={{
+                    type: 'website',
+                    url: 'https://www.algofacade.be',
+                    title: 'Algo Façade - Nettoyage de façades en Wallonie et à Bruxelles',
+                    description: 'Algo Façade, votre expert en nettoyage de façades, terrasses et toitures. Nos professionnels qualifiés utilisent des méthodes respectueuses de l\'environnement pour éliminer les algues, mousses et autres salissures qui ternissent l\'aspect de votre habitation. Contactez-nous dès maintenant pour un devis gratuit et retrouvez une maison comme neuve !',
+                    images: [
+                        {
+                            url: 'https://nextsap.s-ul.eu/ApAjSynB',
+                            width: 800,
+                            height: 600,
+                            alt: 'Logo Algo Façade',
+                        },
+                    ],
+                }}
+            />
+            <LocalBusinessJsonLd
+                type="Organization"
+                id="https://www.algofacade.be"
+                name="Algo Façade"
+                description="Algo Façade est une entreprise spécialisée dans le nettoyage rénovation de façades en crépi. Nous offrons des services de qualité à des prix compétitifs."
+                url="https://www.algofacade.be"
+                telephone="+32 493 84 43 72"
+                address={{
+                    streetAddress: 'Avenue Fernand Brunfaut 24',
+                    addressLocality: 'Chapelle-lez-Herlaimont',
+                    addressRegion: 'Hainaut',
+                    postalCode: '7160',
+                    addressCountry: 'BE',
+                }}
+                geo={{
+                    latitude: '50.4635525',
+                    longitude: '4.2785111',
+                }}
+                images={[
+                    'https://nextsap.s-ul.eu/dbJXQ9zN',
+                ]}
+                openingHours={[
+                    {
+                        opens: '08:00',
+                        closes: '18:00',
+                        dayOfWeek: [
+                            'Monday',
+                            'Tuesday',
+                            'Wednesday',
+                            'Thursday',
+                            'Friday',
+                        ],
+                    },
+                ]}
+                areaServed={[
+                    {
+                        geoMidpoint: {
+                            latitude: '50.525707',
+                            longitude: '4.062102',
+                        },
+                        geoRadius: '200',
+                    },
+                ]}
+
+            />
+            <OrganizationJsonLd
+                type="Organization"
+                id="https://www.algofacade.be"
+                logo="https://nextsap.s-ul.eu/ApAjSynB"
+                legalName="MS Isolation"
+                name="Algo Façade"
+                address={{
+                    streetAddress: 'Avenue Fernand Brunfaut 24',
+                    addressLocality: 'Chapelle-lez-Herlaimont',
+                    addressRegion: 'Hainaut',
+                    postalCode: '7160',
+                    addressCountry: 'BE',
+                }}
+                contactPoint={[
+                    {
+                        telephone: '+32 493 84 43 72',
+                        contactType: 'Service client',
+                        areaServed: ['Wallonie', 'Bruxelles'],
+                        availableLanguage: 'French',
+                    },
+                    {
+                        telephone: '+32 479 42 70 40',
+                        contactType: 'Service client',
+                        areaServed: ['Wallonie', 'Bruxelles'],
+                        availableLanguage: 'French',
+                    },
+                ]}
+                url="https://www.algofacade.be"
+            />
             <Header/>
             <Slideshow images={Data.slideshow} height={"600px"}>
                 <div className="flex flex-col justify-center items-center h-full w-full space-y-10">
