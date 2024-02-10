@@ -10,7 +10,7 @@ const Contact = (props: ContactProps) => {
     return (
         <div className="flex flex-col items-center w-full">
             <SubTitle id="contact" underline="50px">Contact</SubTitle>
-            <div className="flex flex-col items-center w-full space-x-2 gap-3 md:w-[60%]">
+            <div className="flex flex-col items-center w-full space-x-2 gap-3 md:w-[60%] text-center">
                 <h3>Votre façade a besoin d'une remise en état ?</h3>
                 <h3>0460 97 97 85 - <a className="underline" href="mailto:algofacades@gmail.com">algofacades@gmail.com</a></h3>
             </div>

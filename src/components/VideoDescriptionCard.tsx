@@ -8,7 +8,7 @@ type VideoDescriptionCard = {
 
 const opts = {
     height: '300',
-    width: '400',
+    width: '100%',
     playerVars: {
         // https://developers.google.com/youtube/player_parameters
         autoplay: 1,
@@ -17,7 +17,6 @@ const opts = {
 };
 
 const VideoDescriptionCard = (props: VideoDescriptionCard) => {
-   // const ReactPlayer = dynamic(() => import('react-player/lazy'), { ssr: false });
 
     return (
         <div className={"flex flex-col w-full items-center h-auto"}>
