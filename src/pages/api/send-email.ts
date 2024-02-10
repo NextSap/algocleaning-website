@@ -2,7 +2,6 @@ import {FormStateType, SentMessageInfo} from "@/utils/type";
 
 const nodemailer = require("nodemailer");
 import type {NextApiRequest, NextApiResponse} from 'next'
-import {processEnv} from "@next/env";
 
 type ResponseType = {
     httpStatus: number,

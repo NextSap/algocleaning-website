@@ -29,8 +29,8 @@ const Home = () => {
                     images: [
                         {
                             url: 'https://nextsap.s-ul.eu/ApAjSynB',
-                            width: 800,
-                            height: 600,
+                            width: 1520,
+                            height: 516,
                             alt: 'Logo Algo Façade',
                         },
                     ],

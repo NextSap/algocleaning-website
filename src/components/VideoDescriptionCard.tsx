@@ -1,4 +1,4 @@
-import React, {useEffect} from 'react';
+import React from 'react';
 import ReactPlayer from "react-player";
 import dynamic from 'next/dynamic';
 
@@ -16,7 +16,7 @@ const VideoDescriptionCard = (props: VideoDescriptionCard) => {
             <div className="h-auto md:h-[300px]">
                 <ReactPlayer
                     loop={true}
-                    playing={true}
+                    playing={false}
                     muted={true}
                     width={"100%"}
                     height={"100%"}
