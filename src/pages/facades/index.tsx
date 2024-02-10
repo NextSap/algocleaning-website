@@ -27,8 +27,8 @@ const Façades = () => {
                     <DescriptionCard imagePosition={index % 2 === 0 ? "left" : "right"} key={index}
                                      description={item.description} image={item.image}>{item.title}</DescriptionCard>
                 ))}
-                <VideoDescriptionCard video={"/assets/videos/Lotusan.mp4"}>StoColor Lotusan</VideoDescriptionCard>
-                <VideoDescriptionCard video={"/assets/videos/Dryonic.mp4"}>StoColor Dryonic</VideoDescriptionCard>
+                <VideoDescriptionCard video={"N7cpBHMLs0s"}>StoColor Lotusan</VideoDescriptionCard>
+                <VideoDescriptionCard video={"vhjYkvqdpmg"}>StoColor Dryonic</VideoDescriptionCard>
             </div>
             <ContactUsButton/>
             <Faq/>
